@@ -117,6 +117,7 @@ let b:current_syntax = "george"
 
 " META: Comments and George commands
 hi def link comments Comment
+hi def link multilineComments Comment
 hi def link commentCommands Keyword
 hi def link commands PreProc
 hi def link commandParam Identifier
