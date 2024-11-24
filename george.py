@@ -67,13 +67,13 @@ except:
 
 #Post the file contents to George as the input script
 try:
-    url = 'https://www.student.cs.uwaterloo.ca/~se212/george/ask-george/cgi-bin/george.cgi/check'
+    url = 'https://student.cs.uwaterloo.ca/~se212/george/ask-george/cgi-bin/george.cgi/check'
     d = text.strip().encode()
-    req = urllib.request.Request(url, data=d, headers = {'Content-Type': 'text/plain'})
+    req = urllib.request.Request(url, data=d, headers = {'Content-Type': 'text/plain'}, method='POST')
     resp = urllib.request.urlopen(req)
     george_response = resp.read().decode()
     print(george_response)
 except Exception as e:
-    print('Problem getting George feedback.')
+    print('Problem getting George feedback: ', e)
     sys.exit(0)
 
