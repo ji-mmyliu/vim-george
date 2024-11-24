@@ -102,7 +102,8 @@ syn match stepNumber '^\s*\d\+)'
 syn match commands '#\(check\|u\|a\|q\)' nextgroup=commandParam
 
 " Comments
-syn match comments '//.*$' contains=commentCommands,propositions
+syn match comments '//.*$' contains=commentCommands " ,propositions
+syn region multilineComments start='/\*' end='\*/' contains=commentCommands " ,propositions
 syn match commentCommands contained '\(where\|means\)' nextgroup=meanings
 syn match meanings ' .*$' contained
 syn match propositions contained '\<[a-z]\>'
